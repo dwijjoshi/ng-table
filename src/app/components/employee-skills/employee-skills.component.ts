@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './employee-skills.component.html',
   styleUrls: ['./employee-skills.component.css'],
 })
-export class EmployeeSkillsComponent {
-  length: Number = 5;
-}
+export class EmployeeSkillsComponent {}

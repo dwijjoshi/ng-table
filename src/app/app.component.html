@@ -1,129 +1,23 @@
-<div class="container parent">
-  <div class="table-wrapper row">
-    <table class="table table-bordered table-striped table-hover">
-      <thead>
-        <tr>
-          <th class="">#</th>
-          <th class="">Name</th>
-          <th class="">Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-        <tr>
-          <td class="first-col">ID 1</td>
-          <td class="second-col">Table cell</td>
-          <td class="third-col">Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-          <td>Table cell</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="row">
+  <div class="col-md-4">
+    <div class="">
+      <div class="mb-2" *ngFor="let skill of columnOneArray">
+        {{ skill }}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="">
+      <div class="mb-2" *ngFor="let skill of columnTwoArray">
+        {{ skill }}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="">
+      <div class="mb-2" *ngFor="let skill of columnThreeArray">
+        {{ skill }}
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- <app-employee-skills /> -->
