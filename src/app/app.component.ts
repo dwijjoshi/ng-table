@@ -10,23 +10,142 @@ import { Skill } from './skills.model';
 export class AppComponent implements OnInit {
   title = 'table';
 
-  skillArray = ['Java', 'JS', 'C++', '.net'];
-  // skillArray: Category[] = [
-  //   new Category('Java', [new Skill('java', 5)]),
-  //   new Category('JS', [new Skill('java', 5)]),
-  //   new Category('.net', [new Skill('java', 5)]),
-  //   new Category('test', [new Skill('java', 5)]),
-  // ];
+  user: any = {
+    id: '2506',
+    name: 'Dwij',
+    categories: [
+      {
+        categoryId: '1',
+        categoryName: 'Java',
+        skills: [
+          {
+            skillName: 'Spring',
+            level: 3,
+          },
+          {
+            skillName: 'Hibernate',
+            level: 5,
+          },
+        ],
+      },
+      {
+        categoryId: '2',
+        categoryName: 'Javascript',
+        skills: [
+          {
+            skillName: 'React',
+            level: '2',
+          },
+        ],
+      },
+    ],
+  };
 
-  columnOneArray: string[] = [];
-  columnTwoArray: string[] = [];
-  columnThreeArray: string[] = [];
+  skillCategories = [
+    {
+      categoryId: '1',
+      categoryName: 'Java',
+      skills: [
+        {
+          skillName: 'Spring',
+        },
+        {
+          skillName: 'Hibernate',
+        },
+      ],
+    },
+    {
+      categoryId: '2',
+      categoryName: 'Javascript',
+      skills: [
+        {
+          skillName: 'React',
+        },
+        {
+          skillName: 'NodeJS',
+        },
+      ],
+    },
+  ];
 
-  ngOnInit(): void {
-    for (let i = 0; i < this.skillArray.length; i += 3) {
-      this.columnOneArray.push(this.skillArray[i]);
-      this.columnTwoArray.push(this.skillArray[i + 1]);
-      this.columnThreeArray.push(this.skillArray[i + 2]);
+  ngOnInit(): void {}
+
+  skillEdit(category: any, skill: any, $event: any): any {
+    // if (this.user.categories.length < 1) {
+    //   const categoryObj: any = {
+    //     categoryId: category.categoryId,
+    //     categoryName: category.categoryName,
+    //     skills: [
+    //       {
+    //         skillName: skill.skillName,
+    //         level: $event.target.value,
+    //       },
+    //     ],
+    //   };
+    //   this.user.categories.push(categoryObj);
+    //   console.log(this.user);
+    // } else {
+    console.log(this.user, 'Before user');
+    console.log(category.categoryId);
+    const categoryInUser: any = this.user.categories.find(
+      (cat: any) => cat.categoryId === category.categoryId
+    );
+    if (categoryInUser) {
+      const index = this.user.categories.indexOf(categoryInUser);
+      console.log(categoryInUser, 'Before');
+      console.log(skill.skillName);
+
+      const skillInCategory: any = categoryInUser.skills.find(
+        (sk: any) => sk.skillName === skill.skillName
+      );
+
+      console.log(skillInCategory, 'Present or not');
+      if (skillInCategory) {
+        const skillIndex = categoryInUser.skills.indexOf(skillInCategory);
+        console.log(skillIndex);
+        categoryInUser.skills[skillIndex].level = $event.target.value;
+        console.log(categoryInUser, 'After');
+        this.user.categories[index] = categoryInUser;
+        console.log(this.user, 'After user');
+      } else {
+        const skillObj = {
+          skillName: skill.skillName,
+          level: $event.target.value,
+        };
+        this.user.categories[index].skills.push(skillObj);
+        console.log(this.user, 'After User');
+      }
+    } else {
+      const categoryObj: any = {
+        categoryId: category.categoryId,
+        categoryName: category.categoryName,
+        skills: [
+          {
+            skillName: skill.skillName,
+            level: $event.target.value,
+          },
+        ],
+      };
+      this.user.categories.push(categoryObj);
+      console.log(this.user);
     }
+  }
+  // }
+
+  getValue(category: any, skill: any) {
+    const categoryInUser: any = this.user.categories.find(
+      (cat: any) => cat.categoryId === category.categoryId
+    );
+    if (categoryInUser) {
+      const skillInCategory: any = categoryInUser.skills.find(
+        (sk: any) => sk.skillName === skill.skillName
+      );
+      if (skillInCategory) {
+        return skillInCategory.level;
+      } else {
+        return 1;
+      }
+    }
+    return 1;
   }
 }

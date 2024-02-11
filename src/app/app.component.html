@@ -1,23 +1,24 @@
-<div class="row">
-  <div class="col-md-4">
-    <div class="">
-      <div class="mb-2" *ngFor="let skill of columnOneArray">
-        {{ skill }}
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="">
-      <div class="mb-2" *ngFor="let skill of columnTwoArray">
-        {{ skill }}
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="">
-      <div class="mb-2" *ngFor="let skill of columnThreeArray">
-        {{ skill }}
-      </div>
-    </div>
+<div *ngFor="let category of skillCategories">
+  <div *ngFor="let skill of category.skills">
+    <label for="tempB">{{ skill.skillName }}</label
+    ><br />
+    <input
+      type="range"
+      id="tempB"
+      name="temp"
+      list="values"
+      (change)="skillEdit(category, skill, $event)"
+      [value]="getValue(category, skill)"
+      min="1"
+      max="5"
+    />
+
+    <datalist id="values">
+      <option value="1" label="1"></option>
+      <option value="2" label="2"></option>
+      <option value="3" label="3"></option>
+      <option value="4" label="4"></option>
+      <option value="5" label="5"></option>
+    </datalist>
   </div>
 </div>
