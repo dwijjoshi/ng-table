@@ -1,85 +1,64 @@
-<a style="cursor: pointer" (click)="exportexcel()"> Download </a>
+<div class="range">
+  <div class="sliderValue">
+    <span id="1slide">100</span>
+  </div>
+  <div class="field">
+    <input id="1input" type="range" min="0" max="5" steps="1" list="markers" />
+    <datalist id="markers">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </datalist>
+  </div>
+</div>
 
-<table #excelTable id="excel-table">
-  <tr>
-    <th class="top-heading" style="background-color: red">Name</th>
-    <th class="top-heading">Role</th>
-    <th class="top-heading" colspan="4">Java</th>
-    <th class="top-heading" colspan="2">Javascript</th>
-    <th class="top-heading" colspan="3">.net</th>
-    <th class="top-heading" colspan="2">Mobile</th>
-    <th class="top-heading" colspan="3">Testing</th>
-  </tr>
-  <tr>
-    <th></th>
-    <th></th>
-    <th class="sub-heading">Spring</th>
-    <th class="sub-heading">Hibernate</th>
-    <th class="sub-heading">OOP</th>
-    <th class="sub-heading">Servlet</th>
-    <th class="sub-heading">React</th>
-    <th class="sub-heading">Node</th>
-    <th class="sub-heading">MVC</th>
-    <th class="sub-heading">Core</th>
-    <th class="sub-heading">asp</th>
-    <th class="sub-heading">IOS</th>
-    <th class="sub-heading">Android</th>
-    <th class="sub-heading">Automation</th>
-    <th class="sub-heading">Karma</th>
-    <th class="sub-heading">Jest</th>
-  </tr>
-  <tr>
-    <td>Dwij</td>
-    <td>Intern</td>
-    <td>2</td>
-    <td>3</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>Dwij</td>
-    <td>Intern</td>
-    <td>2</td>
-    <td>3</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-  </tr>
-  <tr>
-    <td>Dwij</td>
-    <td>Intern</td>
-    <td>2</td>
-    <td>3</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-  </tr>
-</table>
+<div class="range">
+  <div class="sliderValue">
+    <span id="2slide">100</span>
+  </div>
+  <div class="field">
+    <input
+      id="2input"
+      type="range"
+      (change)="rangeInputChanged(2)"
+      min="0"
+      max="5"
+      steps="1"
+      list="markers"
+    />
+    <datalist id="markers">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </datalist>
+  </div>
+</div>
+
+<div class="range">
+  <div class="sliderValue">
+    <span id="3slide">100</span>
+  </div>
+  <div class="field">
+    <input
+      id="3input"
+      type="range"
+      (change)="rangeInputChanged(3)"
+      value="0"
+      min="0"
+      max="5"
+      steps="1"
+      list="markers"
+    />
+    <datalist id="markers">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </datalist>
+  </div>
+</div>

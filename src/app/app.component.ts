@@ -10,7 +10,52 @@ import { saveAs } from 'file-saver';
 })
 export class AppComponent implements OnInit {
   fileName = 'ExcelSheet.xlsx';
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const slideValue: any = document.querySelector('span');
+    const inputSlider: any = document.querySelector('input');
+    inputSlider.oninput = () => {
+      let value = inputSlider.value;
+      console.log(value);
+      slideValue.textContent = value;
+
+      slideValue.style.left = value * 20 + '%';
+      slideValue.classList.add('show');
+    };
+    inputSlider.onblur = () => {
+      slideValue.classList.remove('show');
+    };
+
+    // const slideValue2: any = document.getElementById('2slide');
+    // const inputSlider2: any = document.getElementById('2input');
+    // inputSlider2.oninput = () => {
+    //   let value = inputSlider2.value;
+    //   console.log(value);
+    //   slideValue2.textContent = value;
+
+    //   slideValue2.style.left = value * 20 + '%';
+    //   slideValue2.classList.add('show');
+    // };
+    // inputSlider2.onblur = () => {
+    //   slideValue2.classList.remove('show');
+    // };
+  }
+
+  rangeInputChanged(index: any) {
+    console.log('hi');
+    const slideValue: any = document.getElementById(index + 'slide');
+    const inputSlider: any = document.getElementById(index + 'input');
+
+    let value = inputSlider.value;
+    console.log(value);
+    slideValue.textContent = value;
+
+    slideValue.style.left = value * 20 + '%';
+    slideValue.classList.add('show');
+
+    inputSlider.onblur = () => {
+      slideValue.classList.remove('show');
+    };
+  }
   exportexcel(): void {
     /* table id is passed over here */
     let endCell = 0;
